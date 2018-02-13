@@ -38,7 +38,11 @@
       // })
       i = 0;
       while(i < 100) {
-        $div = $('<div>', {"class": "square"})
+        $div = $('<div>', {"class": "square",
+                           click: function(event){
+                           $(event.target).addClass("green")
+                           }
+                          })
         $('body').append($div)
         i++
       }
