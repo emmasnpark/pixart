@@ -5,8 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
+    <input type="text" name="color" maxlength="6">
+    <button>Set Color</button>
+
+
+  <div class="brush">
+
+  </div>
+  <script
+    src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script>
+    console.log("ho")
+    $('input').keydown(function (e){
+     if(e.keyCode == 13){
+      var $input_val = $('input').val();
+      console.log($input_val)
+       $('.brush').css('background-color', $input_val);
+      }
+    })
+     // $( "input" ).click(function() {
+     //   $( "button" ).keypress(function(event) {
+     //     event.preventDefault();
+     //     var $input_val = $('input').val();
+     //     console.log($input_val)
+     //      $('.brush').css('background-color', $input_val);
+     //   });
+     // });
+
+      // $('button').on('click', function(event) {
+      //   event.preventDefault();
+      //   var $input_val = $('input').val();
+      //   console.log($input_val)
+      //    $('.brush').css('background-color', $input_val);
+      // })
+    </script>
 </body>
 </html>
