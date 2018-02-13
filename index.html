@@ -22,43 +22,43 @@
     crossorigin="anonymous"></script>
     <script>
     console.log("ho")
-    $('input').keydown(function (e){
-     if(e.keyCode == 13){
+    // $('input').keydown(function (e){
+    //  if(e.keyCode == 13){
+    //   var $input_val = $('input').val();
+    //   console.log($input_val)
+    //    $('.brush').css('background-color', $input_val);
+    //   }
+    // });
+
+    $('.brush').mouseover(function(event) {
+      event.preventDefault();
       var $input_val = $('input').val();
       console.log($input_val)
        $('.brush').css('background-color', $input_val);
-      }
-    });
-
-      // $('button').on('click', function(event) {
-      //   event.preventDefault();
-      //   var $input_val = $('input').val();
-      //   console.log($input_val)
-      //    $('.brush').css('background-color', $input_val);
-      // })
-      // i = 0;
-      // while(i < 100) {
-      //   $div = $('<div>', {"class": "square",
-      //                      click: function(event){
-      //                      $(event.target).addClass("green")
-      //                      }
-      //                     })
-      //   $('body').append($div)
-      //   i++
-      // }
-      i = 0;
-      while(i < 100) {
-        $div = $('<div>', {"class": "square",
-                           click: function(event){
-                           var $input_val = $('input').val();
-                           $(event.target).css('background-color', $input_val)
-                           }
-                          })
-        $('body').append($div)
-        i++
-      }
+    })
+    // i = 0;
+    // while(i < 100) {
+    //   $div = $('<div>', {"class": "square",
+    //                      click: function(event){
+    //                      $(event.target).addClass("green")
+    //                      }
+    //                     })
+    //   $('body').append($div)
+    //   i++
+    // }
+    i = 0;
+    while(i < 100) {
+      $div = $('<div>', {"class": "square",
+                         click: function(event){
+                         var $input_val = $('input').val();
+                         $(event.target).css('background-color', $input_val)
+                         }
+                        })
+      $('body').append($div)
+      i++
+    }
 
 
-    </script>
+  </script>
 </body>
 </html>
