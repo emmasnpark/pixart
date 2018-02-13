@@ -29,14 +29,6 @@
        $('.brush').css('background-color', $input_val);
       }
     })
-     // $( "input" ).click(function() {
-     //   $( "button" ).keypress(function(event) {
-     //     event.preventDefault();
-     //     var $input_val = $('input').val();
-     //     console.log($input_val)
-     //      $('.brush').css('background-color', $input_val);
-     //   });
-     // });
 
       // $('button').on('click', function(event) {
       //   event.preventDefault();
@@ -44,6 +36,14 @@
       //   console.log($input_val)
       //    $('.brush').css('background-color', $input_val);
       // })
+      i = 0;
+      while(i < 100) {
+        $div = $('<div>', {"class": "square"})
+        $('body').append($div)
+        i++
+      }
+
+
     </script>
 </body>
 </html>
