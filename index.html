@@ -12,14 +12,31 @@
     <input type="text" name="color" maxlength="6">
     <button>Set Color</button>
 
+    <input class="movie_input" type="text">
+    <button class="movie_button">Search</button>
+
 
   <div class="brush">
 
   </div>
+
   <script
     src="http://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
+    <script>
+     $('.movie_button').click(function() {
+       $movie_input = $('.movie_input').val()
+        options= {
+          url: "http://omdbapi.com/?apikey=2f6435d9&t=" + $movie_input
+        }
+        $.ajax(options).done(function(response) {
+          $('.brush').css('background-image', 'url("' + response["Poster"] + '")')
+          console.log(response["Poster"])
+        })
+     })
+
+    </script>
     <script>
     console.log("ho")
     // $('input').keydown(function (e){
@@ -46,12 +63,29 @@
     //   $('body').append($div)
     //   i++
     // }
+    // i = 0;
+    // while(i < 100) {
+    //   $div = $('<div>', {"class": "square",
+    //                      click: function(event){
+    //                      var $input_val = $('input').val();
+    //                      $(event.target).css('background-color', $input_val)
+    //                      }
+    //                     })
+    //   $('body').append($div)
+    //   i++
+    // }
     i = 0;
     while(i < 100) {
       $div = $('<div>', {"class": "square",
                          click: function(event){
-                         var $input_val = $('input').val();
-                         $(event.target).css('background-color', $input_val)
+                           $movie_input = $('.movie_input').val()
+                            options= {
+                              url: "http://omdbapi.com/?apikey=2f6435d9&t=" + $movie_input
+                            }
+                            $.ajax(options).done(function(response) {
+                              $(event.target).css('background-image', 'url("' + response["Poster"] + '")')
+
+                         })
                          }
                         })
       $('body').append($div)
